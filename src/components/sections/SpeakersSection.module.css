@@ -1,0 +1,470 @@
+/* ===== SECTION STYLES ===== */
+.speakersSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.speakersSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .speakersSection {
+    padding: 6rem 0;
+  }
+}
+
+/* ===== SECTION HEADER ===== */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .sectionHeader {
+    margin-bottom: 4rem;
+  }
+}
+
+.sectionBadge {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.sectionBadge span {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 3rem;
+  }
+}
+
+.sectionDescription {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== SPEAKERS GRID ===== */
+.speakersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .speakersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .speakersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== SPEAKER CARD ===== */
+.speakerCard {
+  background: white;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.speakerCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.speakerCard.expanded {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== SPEAKER IMAGE ===== */
+.speakerImageContainer {
+  position: relative;
+  height: 280px;
+}
+
+@media (min-width: 768px) {
+  .speakerImageContainer {
+    height: 320px;
+  }
+}
+
+.speakerImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.speakerImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.speakerCard:hover .speakerImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  padding: 1.5rem;
+  color: white;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.speakerCard:hover .imageOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sessionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sessionTime,
+.sessionDate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.statusBadge span {
+  background: #10b981;
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== SPEAKER CONTENT ===== */
+.speakerContent {
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .speakerContent {
+    padding: 2rem;
+  }
+}
+
+.speakerHeader {
+  margin-bottom: 1rem;
+}
+
+.speakerName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.speakerPosition {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.company {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ===== EXPERTISE TAGS ===== */
+.expertiseContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.expertiseTag {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #bae6fd;
+}
+
+.moreTag {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 0.375rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ===== TOGGLE BUTTON ===== */
+.toggleButton {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #4a5568;
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.toggleButton:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.toggleButton:focus {
+  outline: none;
+  ring: 2px solid #3b82f6;
+  ring-offset: 2px;
+}
+
+/* ===== EXPANDED CONTENT ===== */
+.expandedContent {
+  overflow: hidden;
+}
+
+.expandedInner {
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.topicSection,
+.bioSection,
+.allExpertise,
+.socialSection {
+  margin-bottom: 1.5rem;
+}
+
+.topicTitle,
+.bioTitle,
+.expertiseTitle,
+.socialTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.topicDescription,
+.bioDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.expertiseGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.expertiseItem {
+  background: #f0f9ff;
+  color: #0284c7;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #e0f7fa;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #dbeafe;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.socialLink:hover {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+
+/* ===== CTA SECTION ===== */
+.ctaSection {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .ctaSection {
+    margin-top: 5rem;
+  }
+}
+
+.ctaContent {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ctaContent {
+    padding: 3rem;
+  }
+}
+
+.ctaTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+}
+
+.ctaDescription {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 479px) {
+  .speakerContent {
+    padding: 1.25rem;
+  }
+  
+  .speakerName {
+    font-size: 1.25rem;
+  }
+  
+  .ctaContent {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .speakerCard {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

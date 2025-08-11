@@ -1,0 +1,764 @@
+.heroSection {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0 2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg,
+            #fefefe 0%,
+            #f8fafc 50%,
+            #f1f5f9 100%);
+}
+
+.backgroundElements {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(245, 243, 255, 1) 0%, rgba(224, 231, 255, 0.9) 100%);
+}
+
+.gridLayer {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(129, 140, 248, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(129, 140, 248, 0.15) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.7;
+    filter: blur(1px);
+    animation: gridShift 20s linear infinite;
+}
+
+.glowOrb1 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle,
+            rgba(99, 102, 241, 0.3) 0%,
+            rgba(59, 130, 246, 0.1) 50%,
+            transparent 80%);
+    border-radius: 50%;
+    filter: blur(50px);
+    box-shadow:
+        0 0 60px rgba(99, 102, 241, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.glowOrb2 {
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle,
+            rgba(236, 72, 153, 0.25) 0%,
+            rgba(219, 39, 119, 0.1) 50%,
+            transparent 80%);
+    border-radius: 50%;
+    filter: blur(45px);
+    box-shadow:
+        0 0 50px rgba(236, 72, 153, 0.35),
+        inset 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.glowOrb3 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle,
+            rgba(45, 212, 191, 0.2) 0%,
+            rgba(20, 184, 166, 0.08) 50%,
+            transparent 80%);
+    border-radius: 50%;
+    filter: blur(40px);
+    box-shadow:
+        0 0 40px rgba(45, 212, 191, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.glowOverlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 70%);
+    pointer-events: none;
+    animation: glowPulse 25s ease-in-out infinite;
+}
+
+@keyframes gridShift {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 768px) {
+    .gridLayer {
+        background-size: 40px 40px;
+    }
+
+    .glowOrb1 {
+        width: 200px;
+        height: 200px;
+        filter: blur(35px);
+    }
+
+    .glowOrb2 {
+        width: 180px;
+        height: 180px;
+        filter: blur(30px);
+    }
+
+    .glowOrb3 {
+        width: 150px;
+        height: 150px;
+        filter: blur(25px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes fade {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logoContainer {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    filter: drop-shadow(0 4px 20px rgba(59, 130, 246, 0.1));
+}
+
+.logoDivider {
+    margin-top: 1rem;
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(180deg,
+            rgba(59, 130, 246, 1) 0%,
+            rgba(139, 92, 246, 1) 50%,
+            rgba(59, 130, 246, 1) 100%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 0 8px rgba(59, 130, 246, 0.3),
+        0 0 15px rgba(139, 92, 246, 0.25);
+    animation: dividerGlow 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng ánh sáng chạy qua */
+.logoDivider::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: dividerShine 2.5s linear infinite;
+}
+
+/* Nhấp nháy mờ nhẹ */
+@keyframes dividerGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px rgba(59, 130, 246, 0.3),
+            0 0 15px rgba(139, 92, 246, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 15px rgba(59, 130, 246, 0.5),
+            0 0 25px rgba(139, 92, 246, 0.4);
+    }
+}
+
+/* Ánh sáng chạy */
+@keyframes dividerShine {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 150%;
+    }
+}
+
+@media (max-width: 640px) {
+    .logoDivider {
+        display: none;
+        /* ẩn trên mobile nếu muốn */
+    }
+}
+
+/* ----- Divider base (desktop) ----- */
+.logoDivider {
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 8px rgba(59,130,246,.25),
+    0 0 14px rgba(139,92,246,.2);
+  animation: dividerGlow 3s ease-in-out infinite;
+}
+
+/* ánh sáng trượt dọc */
+.logoDivider::before {
+  content: "";
+  position: absolute;
+  left: 0; top: -120%;
+  width: 100%; height: 55%;
+  background: linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,0));
+  animation: dividerShine 2.6s linear infinite;
+}
+
+/* nhấp nháy mờ nhẹ */
+@keyframes dividerGlow {
+  0%,100% { box-shadow:
+    0 0 8px rgba(59,130,246,.25),
+    0 0 14px rgba(139,92,246,.2); }
+  50% { box-shadow:
+    0 0 14px rgba(59,130,246,.45),
+    0 0 22px rgba(139,92,246,.35); }
+}
+@keyframes dividerShine {
+  0% { top: -120%; }
+  100% { top: 160%; }
+}
+
+/* ----- Container giữ 2 logo song song và xuống hàng đẹp ----- */
+.logoContainer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap; /* mobile có thể xuống hàng */
+  filter: drop-shadow(0 4px 20px rgba(59,130,246,.08));
+}
+
+.mainLogo {
+  height: 4rem;
+  width: auto;
+  max-width: 100%;
+  transition: transform .3s ease;
+}
+.mainLogo:hover { transform: scale(1.04); }
+
+/* ----- Tablet & Desktop ----- */
+@media (min-width: 768px) {
+  .mainLogo { height: 5rem; }
+  .logoDivider { height: 64px; }
+}
+
+/* ----- Mobile (hiển thị, nhưng gọn lại) ----- */
+@media (max-width: 640px) {
+  .logoContainer {
+    gap: .75rem;
+  }
+
+  /* thu nhỏ logo để cân đối màn nhỏ */
+  .mainLogo {
+    height: 3.2rem;   /* ~51px */
+  }
+
+  /* vẫn HIỂN THỊ vạch chia nhưng mảnh & ngắn hơn, bớt chói */
+  .logoDivider {
+    width: 2px;
+    height: 36px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 100%);
+    box-shadow:
+      0 0 5px rgba(59,130,246,.18),
+      0 0 9px rgba(139,92,246,.15);
+    animation: dividerGlowMobile 3.2s ease-in-out infinite;
+  }
+  .logoDivider::before {
+    height: 60%;
+    animation: dividerShineMobile 2.8s linear infinite;
+  }
+
+  /* hiệu ứng nhẹ hơn để tiết kiệm mắt & pin */
+  @keyframes dividerGlowMobile {
+    0%,100% { box-shadow:
+      0 0 5px rgba(59,130,246,.18),
+      0 0 9px rgba(139,92,246,.15); }
+    50% { box-shadow:
+      0 0 9px rgba(59,130,246,.32),
+      0 0 14px rgba(139,92,246,.28); }
+  }
+  @keyframes dividerShineMobile {
+    0% { top: -110%; }
+    100% { top: 150%; }
+  }
+}
+
+@media (max-width: 380px) {
+  .logoContainer { flex-direction: column; }
+  .logoDivider { width: 60px; height: 2px; }
+}
+
+
+
+.mainLogo {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.mainLogo:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .mainLogo {
+        height: 5rem;
+    }
+
+    .logoDivider {
+        height: 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .logoContainer {
+        gap: 1rem;
+    }
+
+    .logoDivider {
+        display: none;
+        /* ẩn line trên mobile nếu muốn */
+    }
+}
+
+/* Slogan */
+.sloganContainer {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.slogan {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .slogan {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slogan {
+        font-size: 2.5rem;
+    }
+}
+
+.sloganLine {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+/* Event Info */
+.eventInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .eventInfo {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+}
+
+.infoCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.1rem 0.9rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media (max-width: 639px) {
+    .infoCard {
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.infoCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.infoIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.infoText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.infoLabel {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+    line-height: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.infoValue {
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 700;
+    line-height: 1.3;
+    background: linear-gradient(90deg, #3b82f6, #9333ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Description */
+.description {
+    font-size: 1.125rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .description {
+        font-size: 1.2rem;
+    }
+}
+
+.highlight {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+/* CTA */
+.ctaContainer {
+    margin-bottom: 2.5rem;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: -2rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border-radius: 50px;
+    box-shadow:
+        0 8px 25px rgba(59, 130, 246, 0.25),
+        0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.01em;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.ctaButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 12px 35px rgba(59, 130, 246, 0.35),
+        0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:hover::before {
+    left: 100%;
+}
+
+.ctaButton:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.freeText {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #16a34a;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* Hosted By */
+.hostedBy {
+    margin-top: -1.15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.hostedByText {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.foundationLogo {
+    width: auto;
+    height: 2rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.08));
+}
+
+.foundationLogo:hover {
+    opacity: 1;
+    filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.15));
+}
+
+@media (min-width: 768px) {
+    .foundationLogo {
+        height: 2.25rem;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+    .heroSection {
+        padding: 4rem 0 1.5rem;
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logoContainer {
+        margin-bottom: 1.25rem;
+    }
+
+    .sloganContainer {
+        margin-bottom: 2rem;
+    }
+
+    .eventInfo {
+        margin-bottom: 1.75rem;
+        gap: 0.875rem;
+    }
+
+    .infoCard {
+        padding: 0.75rem 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .ctaContainer {
+        margin-bottom: 2rem;
+    }
+
+    .ctaButton {
+        width: 100%;
+        justify-content: center;
+        font-size: 1.05rem;
+        padding: 1rem 2rem;
+    }
+
+    .hostedBy {
+        gap: 0.625rem;
+    }
+
+    .foundationLogo {
+        height: 1.75rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .mainLogo {
+        height: 3.5rem;
+    }
+
+    .slogan {
+        font-size: 1.5rem;
+    }
+
+    .sloganLine {
+        width: 60px;
+        height: 2px;
+    }
+
+    .infoValue {
+        font-size: 0.85rem;
+    }
+
+    .infoLabel {
+        font-size: 0.75rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* Desktop larger screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .heroSection {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .logoContainer {
+        margin-bottom: 1rem;
+    }
+
+    .sloganContainer {
+        margin-bottom: 1.5rem;
+    }
+
+    .eventInfo {
+        margin-bottom: 1.5rem;
+    }
+
+    .description {
+        margin-bottom: 1.5rem;
+    }
+
+    .ctaContainer {
+        margin-bottom: 1.5rem;
+    }
+}

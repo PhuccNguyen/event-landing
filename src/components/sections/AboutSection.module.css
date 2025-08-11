@@ -1,0 +1,92 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Khung ngoài - to hơn */
+.videoShell {
+  position: relative;
+  max-width: 1280px; /* tăng từ 1024px lên 1280px */
+  margin: 0 auto;
+  padding: 1px; /* viền gradient mỏng */
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,.25), rgba(139,92,246,.25)) border-box;
+  box-shadow: 0 12px 36px rgba(2, 8, 23, 0.08);
+}
+
+.videoShell:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 40px rgba(2, 8, 23, 0.12),
+    inset 0 0 0 1px rgba(255,255,255,.7);
+}
+
+/* Giữ tỉ lệ 16:9 kể cả khi không dùng tailwind aspect-video */
+.videoWrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  isolation: isolate; /* để overlay/blur không tràn */
+}
+.videoWrap::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+/* Video full-bleed */
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  outline: none;
+  border: none;
+  background: #000; /* fallback loading */
+}
+
+/* Overlay phát sáng rất nhẹ cho nền trắng */
+.videoGlow {
+  pointer-events: none;
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 40% at 20% 20%, rgba(59,130,246,.10), transparent 60%),
+    radial-gradient(35% 35% at 80% 30%, rgba(139,92,246,.10), transparent 60%),
+    radial-gradient(30% 30% at 50% 80%, rgba(45,212,191,.10), transparent 60%);
+  filter: blur(28px);
+  z-index: -1;
+  animation: glowPulse 10s ease-in-out infinite;
+  opacity: .9;
+}
+
+/* Hover scale nhẹ (trên desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .videoWrap { transition: transform .35s ease; }
+  .videoWrap:hover { transform: scale(1.006); }
+}
+
+/* Mobile tối ưu khoảng trống & đổ bóng nhẹ hơn */
+@media (max-width: 640px) {
+  .videoShell {
+    border-radius: 14px;
+    box-shadow:
+      0 8px 22px rgba(2, 8, 23, 0.08),
+      inset 0 0 0 1px rgba(255,255,255,.6);
+  }
+  .videoWrap { border-radius: 12px; }
+}
+
+/* Tablet trở lên: tăng kích thước viền sáng */
+@media (min-width: 768px) {
+  .videoShell { border-radius: 20px; }
+  .videoWrap { border-radius: 18px; }
+}
+
+/* Nhịp thở ánh sáng */
+@keyframes glowPulse {
+  0%, 100% { opacity: .85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}

@@ -1,0 +1,127 @@
+.becomePartSection {
+  padding: 5rem 0;
+  background: white;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 3rem;
+  }
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.opportunitiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .opportunitiesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.opportunityCard {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.opportunityCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(45deg, var(--card-color-primary), var(--card-color-secondary));
+}
+
+.opportunityCard.blue {
+  --card-color-primary: #3b82f6;
+  --card-color-secondary: #1d4ed8;
+}
+
+.opportunityCard.purple {
+  --card-color-primary: #8b5cf6;
+  --card-color-secondary: #7c3aed;
+}
+
+.opportunityCard.green {
+  --card-color-primary: #10b981;
+  --card-color-secondary: #059669;
+}
+
+.opportunityCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(45deg, var(--card-color-primary), var(--card-color-secondary));
+  color: white;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.opportunityCard:hover .cardIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.cardDescription {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cardButton {
+  background: linear-gradient(45deg, var(--card-color-primary), var(--card-color-secondary));
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cardButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
