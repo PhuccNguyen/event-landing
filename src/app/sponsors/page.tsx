@@ -10,96 +10,91 @@ export const metadata: Metadata = {
   description: 'Join our sponsors and media partners supporting TingNect event',
 }
 
-const currentPartners = [
+// Strategy Partners
+const strategyPartners = [
   {
     name: 'Blockchain Work',
     logo: '/Partner/BlockchainWork.png',
     tier: 'platinum',
-    website: 'https://docs.google.com/document/d/1kOiJPk3bNVbkknPdDW40pKQfwUKQMrV2/edit',
-    description: 'Leading blockchain solutions provider specializing in enterprise adoption and Web3 innovation.',
-    type: 'Strategic Partner',
-    representative: 'Ms Tiến - CEO'
+    website: 'https://blockchainwork.net/',
+    description: 'Blockchain Development & Enterprise Solutions - Leading blockchain solutions provider specializing in enterprise adoption and Web3 innovation.',
+    type: 'Strategy Partner'
   },
   {
     name: 'W3X Network',
     logo: '/Partner/Web3x_logo.png',
     tier: 'platinum',
     website: 'https://www.w3x.network/',
-    description: 'Web3 X Investment Fund - Venture capital and incubation platform focusing on blockchain and Web3 startups in Asia-Pacific.',
-    type: 'Co-host & Media Partner',
-    representative: 'Erik Dương - Founder'
+    description: 'Web3 Infrastructure & Network Solutions - Venture capital and incubation platform focusing on blockchain and Web3 startups in Asia-Pacific.',
+    type: 'Strategy Partner'
   },
   {
-    name: 'Ufin Group',
-    logo: '/Partner/UFINGROUP.png',
-    tier: 'diamond',
-    website: 'https://ufin.com',
-    description: 'Leading financial technology company specializing in Web3 solutions and decentralized finance.',
-    type: 'Title Sponsor',
-    representative: 'Lucid Hoàng - Founder & CEO'
-  },
+    name: 'Collabrx',
+    logo: '/Partner/Collabrx_logo.png',
+    tier: 'gold',
+    website: 'https://collabrx.com/',
+    description: 'Strategic Collaboration Platform - Advanced collaboration solutions connecting businesses and professionals in the digital ecosystem.',
+    type: 'Strategy Partner'
+  }
+]
+
+// Event Partners
+const eventPartners = [
   {
     name: 'Coinstore',
     logo: '/Partner/coinstore_logo.jfif',
     tier: 'gold',
     website: 'https://www.coinstore.com/',
-    description: 'Global cryptocurrency exchange platform providing secure and reliable trading services.',
-    type: 'VIP Partner',
-    representative: 'Ms Kelly - Representative'
+    description: 'Global Cryptocurrency Exchange - Global cryptocurrency exchange platform providing secure and reliable trading services.',
+    type: 'Event Partner'
   },
   {
     name: 'BlockTitans',
     logo: '/Partner/blocktians.png',
     tier: 'gold',
     website: 'https://blocktitans.com/',
-    description: '5 years in DeFi space, supporting 70+ global projects with project management and development expertise.',
-    type: 'VIP Partner',
-    representative: 'Kentdefi - Lead'
+    description: 'Blockchain Education & Community - 5 years in DeFi space, supporting 70+ global projects with project management and development expertise.',
+    type: 'Event Partner'
+  },
+  {
+    name: 'LC Agency',
+    logo: '/Partner/LC Agency.jpg',
+    tier: 'silver',
+    website: 'https://lcademy.io/',
+    description: 'Digital Marketing & Brand Strategy - Blockchain marketing agency specializing in helping Web3 projects penetrate Vietnamese market.',
+    type: 'Event Partner'
   },
   {
     name: 'Saha Holding',
     logo: '/Partner/saha_hoding.png',
     tier: 'silver',
     website: 'https://sahaholding.com.vn/',
-    description: 'Investment holding company focusing on technology and innovation sectors.',
-    type: 'Strategic Partner',
-    representative: 'Investment Team'
+    description: 'Investment & Strategic Partnership - Investment holding company focusing on technology and innovation sectors.',
+    type: 'Event Partner'
   },
   {
-    name: 'Collabrx',
-    logo: '/Partner/Collabrx.svg',
-    tier: 'silver',
-    website: '#',
-    description: 'US-based medical technology cloud computing company expanding into Asia-Pacific region.',
-    type: 'MOU Partner',
-    representative: 'Robert Phạm - Asia Development Director'
+    name: 'Fintech 24h',
+    logo: '/Partner/fintech24h.png',
+    tier: 'media',
+    website: 'https://fintech24h.com/',
+    description: 'Fintech Media & News Platform - Leading fintech and blockchain media platform providing industry insights and news.',
+    type: 'Event Partner'
   },
   {
     name: 'Coin Terminal',
     logo: '/Partner/cointerminal.png',
     tier: 'media',
     website: 'https://www.cointerminal.com/',
-    description: 'Platform supporting Web3/blockchain projects for capital raising and token launches.',
-    type: 'Media Partner',
-    representative: 'Nguyễn Toàn Thắng - Regional Lead'
+    description: 'Crypto Trading & Analytics Platform - Platform supporting Web3/blockchain projects for capital raising and token launches.',
+    type: 'Event Partner'
   },
   {
-    name: 'LC Agency',
-    logo: '/Partner/LC Agency.jpg',
-    tier: 'media',
-    website: 'https://lcademy.io/',
-    description: 'Blockchain marketing agency specializing in helping Web3 projects penetrate Vietnamese market.',
-    type: 'Media Partner',
-    representative: 'Eire Ngo - Founder'
-  },
-  {
-    name: 'Fintech24h',
-    logo: '/Partner/fintech24h.png',
-    tier: 'media',
-    website: 'https://fintech24h.com/',
-    description: 'Blockchain marketing agency with industry experts and extensive global network.',
-    type: 'Media Partner',
-    representative: 'Vincent Nguyen - Founder & CEO'
+    name: 'DADS Network',
+    logo: '/Partner/dads_network.png',
+    tier: 'gold',
+    website: 'https://dadsnetwork.co',
+    description: 'Web3 Advertising Infrastructure - A Web3 advertising infrastructure that empowers developers, businesses, and users to build a thriving and sustainable ecosystem with rewards pools, growth monetization, and top-tier incentives.',
+    type: 'Event Partner'
   }
 ]
 
@@ -107,7 +102,7 @@ const sponsorshipTiers = [
   {
     name: 'Diamond Sponsor',
     price: '$15,000+',
-    icon: <Crown size={28} />,
+    icon: <Crown size={24} />,
     color: 'diamond',
     benefits: [
       'Premium logo placement on all materials',
@@ -123,7 +118,7 @@ const sponsorshipTiers = [
   {
     name: 'Platinum Sponsor',
     price: '$10,000+',
-    icon: <Award size={28} />,
+    icon: <Award size={24} />,
     color: 'platinum',
     benefits: [
       'Prominent logo on event materials',
@@ -138,7 +133,7 @@ const sponsorshipTiers = [
   {
     name: 'Gold Sponsor',
     price: '$5,000+',
-    icon: <Medal size={28} />,
+    icon: <Medal size={24} />,
     color: 'gold',
     benefits: [
       'Logo on event materials',
@@ -152,7 +147,7 @@ const sponsorshipTiers = [
   {
     name: 'Silver Sponsor',
     price: '$2,500+',
-    icon: <Star size={28} />,
+    icon: <Star size={24} />,
     color: 'silver',
     benefits: [
       'Logo on website and materials',
@@ -165,7 +160,7 @@ const sponsorshipTiers = [
   {
     name: 'Media Partner',
     price: 'Partnership',
-    icon: <Target size={28} />,
+    icon: <Target size={24} />,
     color: 'media',
     benefits: [
       'Cross-promotion opportunities',
@@ -216,21 +211,21 @@ const SponsorsPage = () => {
             
             <div className={styles.heroStats}>
               <div className={styles.statItem}>
-                <Users size={20} />
+                <Users size={18} />
                 <div>
-                  <span className={styles.statNumber}>500+</span>
+                  <span className={styles.statNumber}>100+</span>
                   <span className={styles.statLabel}>Attendees</span>
                 </div>
               </div>
               <div className={styles.statItem}>
-                <Building size={20} />
+                <Building size={18} />
                 <div>
                   <span className={styles.statNumber}>50+</span>
                   <span className={styles.statLabel}>Companies</span>
                 </div>
               </div>
               <div className={styles.statItem}>
-                <Target size={20} />
+                <Target size={18} />
                 <div>
                   <span className={styles.statNumber}>10+</span>
                   <span className={styles.statLabel}>Partners</span>
@@ -241,27 +236,28 @@ const SponsorsPage = () => {
         </div>
       </section>
 
-      {/* Current Partners */}
+      {/* Strategy Partners */}
       <section className={styles.partnersSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our Strategic Partners</h2>
+            <h2 className={styles.sectionTitle}>Strategy Partners</h2>
             <p className={styles.sectionSubtitle}>
-              Leading organizations supporting the Web3 ecosystem
+              Strategic organizations driving Web3 innovation and enterprise adoption
             </p>
           </div>
           
           <div className={styles.partnersGrid}>
-            {currentPartners.map((partner, index) => (
+            {strategyPartners.map((partner, index) => (
               <div key={index} className={`${styles.partnerCard} ${getTierClass(partner.tier)}`}>
                 <div className={styles.partnerHeader}>
                   <div className={styles.partnerLogo}>
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      width={120}
-                      height={60}
+                      width={100}
+                      height={50}
                       className={styles.logoImage}
+                      sizes="(max-width: 640px) 80px, (max-width: 1024px) 100px, 120px"
                     />
                   </div>
                   <div className={styles.partnerType}>
@@ -273,22 +269,67 @@ const SponsorsPage = () => {
                   <h3 className={styles.partnerName}>{partner.name}</h3>
                   <p className={styles.partnerDescription}>{partner.description}</p>
                   
-                  {partner.representative && (
-                    <div className={styles.representative}>
-                      <span className={styles.repLabel}>Representative:</span>
-                      <span className={styles.repName}>{partner.representative}</span>
-                    </div>
-                  )}
+                  <a 
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.partnerLink}
+                    aria-label={`Visit ${partner.name} website`}
+                  >
+                    <Globe size={14} />
+                    <span>Visit Website</span>
+                    <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Event Partners */}
+      <section className={styles.partnersSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Event Partners</h2>
+            <p className={styles.sectionSubtitle}>
+              Leading companies and organizations supporting our Web3 community event
+            </p>
+          </div>
+          
+          <div className={styles.partnersGrid}>
+            {eventPartners.map((partner, index) => (
+              <div key={index} className={`${styles.partnerCard} ${getTierClass(partner.tier)}`}>
+                <div className={styles.partnerHeader}>
+                  <div className={styles.partnerLogo}>
+                    <Image
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      width={100}
+                      height={50}
+                      className={styles.logoImage}
+                      sizes="(max-width: 640px) 80px, (max-width: 1024px) 100px, 120px"
+                    />
+                  </div>
+                  <div className={styles.partnerType}>
+                    <span>{partner.type}</span>
+                  </div>
+                </div>
+                
+                <div className={styles.partnerContent}>
+                  <h3 className={styles.partnerName}>{partner.name}</h3>
+                  <p className={styles.partnerDescription}>{partner.description}</p>
                   
                   <a 
                     href={partner.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.partnerLink}
+                    aria-label={`Visit ${partner.name} website`}
                   >
-                    <Globe size={16} />
+                    <Globe size={14} />
                     <span>Visit Website</span>
-                    <ExternalLink size={14} />
+                    <ExternalLink size={12} />
                   </a>
                 </div>
               </div>
@@ -342,7 +383,7 @@ const SponsorsPage = () => {
           <div className={styles.reasonsGrid}>
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
-                <Users size={32} />
+                <Users size={28} />
               </div>
               <h3>High-Quality Audience</h3>
               <p>Connect with developers, entrepreneurs, investors, and industry leaders actively shaping the Web3 landscape in Southeast Asia.</p>
@@ -350,7 +391,7 @@ const SponsorsPage = () => {
             
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
-                <Target size={32} />
+                <Target size={28} />
               </div>
               <h3>Brand Visibility</h3>
               <p>Showcase your brand to a targeted audience through various marketing channels, event materials, and digital platforms.</p>
@@ -358,7 +399,7 @@ const SponsorsPage = () => {
             
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
-                <Handshake size={32} />
+                <Handshake size={28} />
               </div>
               <h3>Strategic Networking</h3>
               <p>Build valuable relationships and partnerships with key stakeholders, investors, and innovators in the blockchain ecosystem.</p>
@@ -366,7 +407,7 @@ const SponsorsPage = () => {
             
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
-                <Crown size={32} />
+                <Crown size={28} />
               </div>
               <h3>Thought Leadership</h3>
               <p>Position your organization as an industry leader by sharing expertise and insights with the Web3 community.</p>

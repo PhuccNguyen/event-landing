@@ -10,74 +10,72 @@ export const metadata: Metadata = {
 }
 
 const speakers = [
+
+    {
+    id: 4,
+    name: 'Lucid Hoang',
+    title: 'Founder UFIN',
+    company: 'UFIN GROUP',
+    topic: 'Build for Billions: User Expansion Strategy and Revenue Optimization in the Decentralized World',
+    image: '/Speaker/Lucid Hoang.png',
+    bio: 'Lucid Hoang is the visionary founder of Ufin Group, leading innovative solutions in the decentralized technology space. With over 10 years of experience in fintech and blockchain technology, he has been instrumental in driving Web3 adoption across Southeast Asia, focusing on scalable solutions that can serve billions of users.',
+    expertise: ['Blockchain Technology', 'Fintech Innovation', 'Web3 Strategy', 'Decentralized Finance'],
+     social: {
+      linkedin: 'https://www.linkedin.com/in/lucidhoang',
+      website: 'https://ufin.com'
+    },
+    status: 'Keynote Speaker',
+    sessionTime: '15:00 - 15:40',
+    role: 'Main Keynote Speaker'
+  },
   {
     id: 1,
-    name: 'Ms Tiến',
-    title: 'CEO',
+    name: 'Ms Tien Le',
+    title: 'CEO & Co-Founder',
     company: 'Blockchain Work',
     topic: 'The Future of Blockchain in Enterprise Solutions',
     image: '/Speaker/Ms Tien.png',
-    bio: 'Ms Tiến is a visionary leader in blockchain technology, driving enterprise adoption and innovation. As CEO of Blockchain Work, she has been instrumental in developing cutting-edge solutions that bridge traditional business with Web3 technologies. Her expertise spans across enterprise blockchain implementation, strategic partnerships, and digital transformation.',
+    bio: 'Ms Tien Le is a pioneer in developing human resources and blockchain applications in Vietnam. She has transformed BlockchainWork into a bridge connecting over 250 businesses with the blockchain talent community. With more than 7 years of experience in digital marketing, SaaS, and entrepreneurship, along with her vision to help Vietnam’s workforce keep pace with the Web3.0 wave, she not only builds connections but also inspires a new generation of blockchain builders.',
     expertise: ['Blockchain Technology', 'Enterprise Solutions', 'Web3 Strategy', 'Digital Transformation'],
     social: {
-      linkedin: 'https://docs.google.com/document/d/1kOiJPk3bNVbkknPdDW40pKQfwUKQMrV2/edit',
-      website: 'https://drive.google.com/drive/folders/1i7cRSU46b8G4ZLn5lCBquz-qejKd5Qog'
+      linkedin: 'https://www.linkedin.com/company/blockchainworkvietnam/',
+      website: 'https://blockchainwork.net/'
     },
     status: 'VIP Speaker',
-    sessionTime: '14:00 - 14:30',
-    role: 'Keynote Speaker & MOU Signing'
+    sessionTime: '15:00 - 15:40',
+    role: 'Speaker & MOU Signing'
   },
   {
     id: 2,
-    name: 'Erik Dương',
+    name: 'Erik Duong',
     title: 'Founder',
     company: 'W3X Network',
     topic: 'Building the Next Generation Web3 Infrastructure',
     image: '/Speaker/Erik.png',
-    bio: 'Erik Dương is the founder of W3X Network and Web3 X Investment Fund, with 15 years in technology and 8 years in blockchain. He has worked with leading tech giants like SAP and Uber in the US, Germany, and Singapore. Web3 X Investment Fund focuses on incubating and investing in blockchain startups across the Asia-Pacific region, having supported over 50 startups with several reaching billion-dollar valuations.',
+    bio: 'Erik Duong is the founder of W3X Network and Web3 X Investment Fund, with 15 years in technology and 8 years in blockchain. He has worked with leading tech giants like SAP and Uber in the US, Germany, and Singapore. Web3 X Investment Fund focuses on incubating and investing in blockchain startups across the Asia-Pacific region, having supported over 50 startups with several reaching billion-dollar valuations.',
     expertise: ['Web3 Infrastructure', 'Blockchain Development', 'Investment Strategy', 'Startup Incubation'],
     social: {
       website: 'https://www.w3x.network/',
-      linkedin: '#'
     },
     status: 'Co-host',
-    sessionTime: '14:30 - 15:00',
+    sessionTime: '15:00 - 15:40',
     role: 'Co-host, Media Partner & Speaker'
   },
   {
     id: 3,
-    name: 'Niklaus Trần',
+    name: 'Niklaus Tran',
     title: 'Co-founder',
     company: 'VDBG',
-    topic: 'Strategic Partnerships in the Global Blockchain Ecosystem',
     image: '/Speaker/Niklaus.jpg',
-    bio: 'Niklaus Trần brings extensive experience from his roles as Partnerships Manager at Alibaba and Business Development Manager at AdsYield. As Co-founder of VDBG, he specializes in building strategic partnerships in the blockchain space, connecting traditional businesses with Web3 innovations and fostering global collaboration.',
+    bio: 'Niklaus Tran brings extensive experience from his roles as Partnerships Manager at Alibaba and Business Development Manager at AdsYield. As Co-founder of VDBG, he specializes in building strategic partnerships in the blockchain space, connecting traditional businesses with Web3 innovations and fostering global collaboration.',
     expertise: ['Strategic Partnerships', 'Business Development', 'Global Markets', 'Blockchain Ecosystem'],
     social: {
       linkedin: 'https://www.linkedin.com/in/niklaus-tran/',
-      website: 'https://docs.google.com/document/d/1skGo-FPpBoJsUSmmaOx3boOKEiLBOLdDgyXn5e_uog0/edit'
     },
     status: 'Featured Speaker',
-    sessionTime: '15:00 - 15:30',
+    sessionTime: '15:00 - 15:40',
     role: 'Industry Expert'
   },
-  {
-    id: 4,
-    name: 'Lucid Hoàng',
-    title: 'Founder & CEO',
-    company: 'Ufin Group',
-    topic: 'Build for Billions: Chiến lược mở rộng người dùng và khai thác doanh thu trong thế giới phi tập trung',
-    image: '/Speaker/Lucid Hoang.png',
-    bio: 'Lucid Hoàng is the visionary founder of Ufin Group, leading innovative solutions in the decentralized technology space. With over 10 years of experience in fintech and blockchain technology, he has been instrumental in driving Web3 adoption across Southeast Asia, focusing on scalable solutions that can serve billions of users.',
-    expertise: ['Blockchain Technology', 'Fintech Innovation', 'Web3 Strategy', 'Decentralized Finance'],
-    social: {
-      linkedin: '#',
-      website: 'https://ufin.com'
-    },
-    status: 'Keynote Speaker',
-    sessionTime: '15:30 - 16:00',
-    role: 'Main Keynote Speaker'
-  }
 ]
 
 const SpeakersPage = () => {

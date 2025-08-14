@@ -250,7 +250,7 @@ const HeroSection = () => {
               </h1>
               <div className={styles.taglineSubtext}>
                 <span>Vietnam&apos;s Premier</span>
-                <span className={styles.web3Text}>Web3 Gathering</span>
+                <span className={styles.web3Text}> Web3 Gathering</span>
               </div>
               <div className={styles.taglineAccent} />
             </motion.div>
@@ -346,29 +346,32 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Stats Section */}
-          <motion.div
-            variants={fadeInUp}
-            transition={{ delay: 2.8, duration: 0.8 }}
-            className={styles.statsSection}
-          >
-            <div className={styles.statsGrid}>
-              {stats.map((stat, index) => (
-                <div key={index} className={styles.statItem}>
-                  <motion.div
-                    className={styles.statNumber}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 3 + index * 0.2, duration: 0.5 }}
-                  >
-                    {stat.number}
-                  </motion.div>
-                  <div className={styles.statLabel}>{stat.label}</div>
-                  {index < stats.length - 1 && <div className={styles.statSeparator} />}
-                </div>
-              ))}
-            </div>
-          </motion.div>
+{/* Stats Section */}
+<motion.div
+  variants={fadeInUp}
+  transition={{ delay: 2.8, duration: 0.8 }}
+  className={styles.statsSection}
+>
+  <div className={styles.statsGrid}>
+    {stats.map((stat, index) => (
+      <div key={index} className={styles.statItem}>
+        <motion.div
+          className={styles.statNumber}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 3 + index * 0.2, duration: 0.5 }}
+        >
+          {stat.number}
+        </motion.div>
+        <div className={styles.statLabel}>{stat.label}</div>
+
+        {/* luôn hiển thị separator, kể cả phần tử cuối */}
+        <div className={styles.statSeparator} />
+      </div>
+    ))}
+  </div>
+</motion.div>
+
         </motion.div>
       </div>
 

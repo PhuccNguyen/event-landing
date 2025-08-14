@@ -98,7 +98,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/sponsors" className={styles.footerLink}>
-                    Sponsors
+                    Partners
                   </Link>
                 </li>
                 <li>

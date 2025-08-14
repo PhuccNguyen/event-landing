@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { ArrowLeft, Mail, MapPin } from 'lucide-react'
 import { FaTelegram, FaTwitter, FaFacebook } from 'react-icons/fa'
 import ContactForm from '@/components/forms/ContactForm'
 import styles from './contact.module.css'
@@ -15,7 +15,7 @@ const ContactPage = () => {
     <div className={styles.contactPage}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <Link href="/" className={styles.backButton}>
             <ArrowLeft size={20} />
             Back to Home
@@ -37,8 +37,7 @@ const ContactPage = () => {
             <div className={styles.contactInfo}>
               <h2 className={styles.infoTitle}>Get in Touch</h2>
               <p className={styles.infoDescription}>
-                Reach out to us for any inquiries about the event, partnerships, 
-                or general questions. We&apos;re here to help!
+                Reach out to us for any inquiries about the event, partnerships, or general questions. We&apos;re here to help!
               </p>
 
               <div className={styles.contactDetails}>
@@ -55,34 +54,12 @@ const ContactPage = () => {
 
                 <div className={styles.contactItem}>
                   <div className={styles.contactIcon}>
-                    <Phone size={24} />
-                  </div>
-                  <div className={styles.contactText}>
-                    <h3>Phone</h3>
-                    <p>+84 (0) 123 456 789</p>
-                    <span className={styles.availability}>Available Mon-Fri, 9AM-6PM</span>
-                  </div>
-                </div>
-
-                <div className={styles.contactItem}>
-                  <div className={styles.contactIcon}>
                     <MapPin size={24} />
                   </div>
                   <div className={styles.contactText}>
                     <h3>Event Location</h3>
-                    <p>Ho Chi Minh City, Vietnam</p>
+                    <p>Camellia room, 2nd floor, Rex Hotel, 141 Nguyen Hue, District 1, Ho Chi Minh City</p>
                     <span className={styles.availability}>August 16, 2025</span>
-                  </div>
-                </div>
-
-                <div className={styles.contactItem}>
-                  <div className={styles.contactIcon}>
-                    <Clock size={24} />
-                  </div>
-                  <div className={styles.contactText}>
-                    <h3>Event Time</h3>
-                    <p>14:00 - 17:00</p>
-                    <span className={styles.availability}>+ Networking Dinner at 17:00</span>
                   </div>
                 </div>
               </div>

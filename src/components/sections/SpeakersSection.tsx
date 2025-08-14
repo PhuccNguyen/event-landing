@@ -3,82 +3,82 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Calendar, Clock, ChevronDown, ChevronUp, Linkedin, Globe } from 'lucide-react'
 import styles from './SpeakersSection.module.css'
 
 const speakers = [
   {
+    id: 4,
+    name: 'Lucid Hoang',
+    title: 'Founder UFIN',
+    company: 'UFIN GROUP',
+    topic: 'Build for Billions: User Scaling Strategy and Revenue Optimization in Decentralized World',
+    image: '/Speaker/Lucid Hoang.png',
+    bio: 'Lucid Hoang is the visionary founder of Ufin Group, leading innovative solutions in the decentralized technology space. With over 10 years of experience in fintech and blockchain technology, he has been instrumental in driving Web3 adoption across Southeast Asia.',
+    expertise: ['Blockchain Tech', 'Fintech Innovation', 'Web3 Strategy'],
+    social: {
+      linkedin: 'https://www.linkedin.com/in/lucidhoang',
+      website: 'https://ufin.com'
+    },
+    sessionTime: '15:00 - 15:40',
+    sessionDate: 'Aug 16, 2025',
+    status: 'Keynote'
+  },
+  {
     id: 1,
-    name: 'Ms Tiến',
-    title: 'CEO',
+    name: 'Ms Tien Le ',
+    title: 'CEO & Co-Founder',
     company: 'Blockchain Work',
     topic: 'The Future of Blockchain in Enterprise Solutions',
     image: '/Speaker/Ms Tien.png',
-    bio: 'Ms Tiến is a visionary leader in blockchain technology, driving enterprise adoption and innovation. As CEO of Blockchain Work, she has been instrumental in developing cutting-edge solutions that bridge traditional business with Web3 technologies.',
-    expertise: ['Blockchain Tech', 'Enterprise Solutions', 'Web3 Strategy'],
+    bio: 'Ms Tien Le is a visionary leader in blockchain technology, driving enterprise adoption and innovation. As CEO of Blockchain Work, she has been instrumental in developing cutting-edge solutions that bridge traditional business with Web3 technologies.',
+    expertise: ['Human Resources', 'Enterprise Solutions', 'Web3 Strategy'],
     social: {
-      linkedin: 'https://docs.google.com/document/d/1kOiJPk3bNVbkknPdDW40pKQfwUKQMrV2/edit',
-      website: 'https://drive.google.com/drive/folders/1i7cRSU46b8G4ZLn5lCBquz-qejKd5Qog'
+      linkedin: 'https://www.linkedin.com/company/blockchainworkvietnam/',
+      website: 'https://blockchainwork.net/'
     },
-    sessionTime: '14:00 - 14:30',
-    sessionDate: '16/8/2025',
+    sessionTime: '15:00 - 15:40',
+    sessionDate: 'Aug 16, 2025',
     status: 'VIP'
   },
   {
     id: 2,
-    name: 'Erik Dương',
+    name: 'Erik Duong',
     title: 'Founder',
     company: 'W3X Network',
     topic: 'Building the Next Generation Web3 Infrastructure',
     image: '/Speaker/Erik.png',
-    bio: 'Erik Dương is the founder of W3X Network, a pioneering platform in Web3 infrastructure. With extensive experience in blockchain development and ecosystem building, he leads innovation in decentralized technologies.',
+    bio: 'Erik Duong is the founder of W3X Network, a pioneering platform in Web3 infrastructure. With extensive experience in blockchain development and ecosystem building, he leads innovation in decentralized technologies.',
     expertise: ['Web3 Infrastructure', 'Blockchain Dev', 'DeFi Solutions'],
     social: {
       website: 'https://www.w3x.network/',
-      linkedin: '#'
     },
-    sessionTime: '14:30 - 15:00',
-    sessionDate: '16/8/2025',
+    sessionTime: '15:00 - 15:40',
+    sessionDate: 'Aug 16, 2025',
     status: 'Co-host'
   },
   {
     id: 3,
-    name: 'Niklaus Trần',
+    name: 'Niklaus Tran',
     title: 'Co-founder',
     company: 'VDBG',
     topic: 'Strategic Partnerships in the Global Blockchain Ecosystem',
     image: '/Speaker/Niklaus.jpg',
-    bio: 'Niklaus Trần brings extensive experience from his roles as Partnerships Manager at Alibaba and Business Development Manager at AdsYield. As Co-founder of VDBG, he specializes in building strategic partnerships in the blockchain space.',
+    bio: 'Niklaus Tran brings extensive experience from his roles as Partnerships Manager at Alibaba and Business Development Manager at AdsYield. As Co-founder of VDBG, he specializes in building strategic partnerships in the blockchain space.',
     expertise: ['Strategic Partnerships', 'Business Dev', 'Global Markets'],
     social: {
       linkedin: 'https://www.linkedin.com/in/niklaus-tran/',
-      website: 'https://docs.google.com/document/d/1skGo-FPpBoJsUSmmaOx3boOKEiLBOLdDgyXn5e_uog0/edit'
     },
-    sessionTime: '15:00 - 15:30',
-    sessionDate: '16/8/2025',
+    sessionTime: '15:00 - 15:40',
+    sessionDate: 'Aug 16, 2025',
     status: 'Speaker'
-  },
-  {
-    id: 4,
-    name: 'Lucid Hoàng',
-    title: 'Founder & CEO',
-    company: 'Ufin Group',
-    topic: 'Build for Billions: Chiến lược mở rộng người dùng và khai thác doanh thu trong thế giới phi tập trung',
-    image: '/Speaker/Lucid Hoang.png',
-    bio: 'Lucid Hoàng is the visionary founder of Ufin Group, leading innovative solutions in the decentralized technology space. With over 10 years of experience in fintech and blockchain technology, he has been instrumental in driving Web3 adoption across Southeast Asia.',
-    expertise: ['Blockchain Tech', 'Fintech Innovation', 'Web3 Strategy'],
-    social: {
-      linkedin: '#',
-      website: 'https://ufin.com'
-    },
-    sessionTime: '15:30 - 16:00',
-    sessionDate: '16/8/2025',
-    status: 'Keynote'
   }
 ]
 
 const SpeakersSection = () => {
+    const router = useRouter()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [selectedSpeaker, setSelectedSpeaker] = useState<number | null>(null)
@@ -133,15 +133,16 @@ const SpeakersSection = () => {
             >
               {/* Speaker Info Header */}
               <div className={styles.speakerHeader}>
-                {/* Speaker Image - Now smaller and positioned left */}
+                {/* Speaker Image - Taller portrait format */}
                 <div className={styles.speakerImageContainer}>
                   <div className={styles.speakerImageWrapper}>
                     <Image
                       src={speaker.image}
-                      alt={speaker.name}
+                      alt={`${speaker.name} - ${speaker.title} at ${speaker.company}`}
                       fill
                       className={styles.speakerImage}
                       priority={index < 2}
+                      sizes="(max-width: 640px) 80px, (max-width: 1024px) 90px, 100px"
                     />
                   </div>
                   <div className={`${styles.statusBadge} ${styles[getStatusColor(speaker.status)]}`}>
@@ -156,7 +157,7 @@ const SpeakersSection = () => {
                     <span className={styles.title}>{speaker.title}</span>
                     <span className={styles.company}>at {speaker.company}</span>
                   </div>
-                  
+
                   {/* Session Time - Mobile Visible */}
                   <div className={styles.sessionInfo}>
                     <div className={styles.sessionTime}>
@@ -192,12 +193,13 @@ const SpeakersSection = () => {
                   onClick={() => toggleSpeakerDetails(speaker.id)}
                   className={styles.toggleButton}
                   aria-expanded={selectedSpeaker === speaker.id}
+                  aria-label={`${selectedSpeaker === speaker.id ? 'Collapse' : 'Expand'} details for ${speaker.name}`}
                 >
                   <span>
-                    {selectedSpeaker === speaker.id ? 'Thu gọn' : 'Chi tiết'}
+                    {selectedSpeaker === speaker.id ? 'Show Less' : 'View Details'}
                   </span>
-                  {selectedSpeaker === speaker.id ? 
-                    <ChevronUp size={16} /> : 
+                  {selectedSpeaker === speaker.id ?
+                    <ChevronUp size={16} /> :
                     <ChevronDown size={16} />
                   }
                 </button>
@@ -216,19 +218,19 @@ const SpeakersSection = () => {
                 <div className={styles.expandedInner}>
                   {/* Session Topic */}
                   <div className={styles.infoBlock}>
-                    <h4 className={styles.blockTitle}>Chủ đề</h4>
+                    <h4 className={styles.blockTitle}>Speaking Topic</h4>
                     <p className={styles.blockContent}>{speaker.topic}</p>
                   </div>
 
                   {/* Speaker Bio */}
                   <div className={styles.infoBlock}>
-                    <h4 className={styles.blockTitle}>Giới thiệu</h4>
+                    <h4 className={styles.blockTitle}>Biography</h4>
                     <p className={styles.blockContent}>{speaker.bio}</p>
                   </div>
 
                   {/* All Expertise */}
                   <div className={styles.infoBlock}>
-                    <h4 className={styles.blockTitle}>Chuyên môn</h4>
+                    <h4 className={styles.blockTitle}>Expertise Areas</h4>
                     <div className={styles.allExpertiseGrid}>
                       {speaker.expertise.map((skill, i) => (
                         <span key={i} className={styles.expertiseItem}>
@@ -240,16 +242,28 @@ const SpeakersSection = () => {
 
                   {/* Social Links */}
                   <div className={styles.infoBlock}>
-                    <h4 className={styles.blockTitle}>Liên hệ</h4>
+                    <h4 className={styles.blockTitle}>Connect</h4>
                     <div className={styles.socialLinks}>
                       {speaker.social.linkedin && (
-                        <a href={speaker.social.linkedin} className={styles.socialLink} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={speaker.social.linkedin}
+                          className={styles.socialLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${speaker.name}'s LinkedIn profile`}
+                        >
                           <Linkedin size={14} />
                           LinkedIn
                         </a>
                       )}
                       {speaker.social.website && (
-                        <a href={speaker.social.website} className={styles.socialLink} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={speaker.social.website}
+                          className={styles.socialLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit ${speaker.name}'s website`}
+                        >
                           <Globe size={14} />
                           Website
                         </a>
@@ -270,12 +284,17 @@ const SpeakersSection = () => {
           className={styles.ctaSection}
         >
           <div className={styles.ctaContent}>
-            <h3 className={styles.ctaTitle}>Trở thành diễn giả?</h3>
+            <h3 className={styles.ctaTitle}>Become a Speaker?</h3>
             <p className={styles.ctaDescription}>
-              Chia sẻ kiến thức với cộng đồng Web3
+              Share your expertise with the Web3 community, inspire others, and
+              become part of our global network of innovators.
             </p>
-            <button className={styles.ctaButton}>
-              Đăng ký ngay
+            <button
+              className={styles.ctaButton}
+              aria-label="Apply to become a speaker"
+              onClick={() => router.push('/speakers')}
+            >
+              Apply Now
             </button>
           </div>
         </motion.div>

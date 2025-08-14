@@ -67,15 +67,15 @@ const Header = () => {
     },
     {
       href: '/speakers',
-      label: 'Speakers List'
+      label: 'Speakers'
     },
     {
       href: '/agenda',
-      label: 'Agenda List'
+      label: 'Agenda'
     },
     {
       href: '/sponsors',
-      label: 'Partner List'
+      label: 'Partners'
     },
     {
       href: '/contact',

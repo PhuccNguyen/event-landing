@@ -74,19 +74,19 @@ const agendaItems = [
   },
   { 
     time: '16:30 – 17:00', 
-    title: 'Coffee Break & Networking', 
-    description: 'Refreshments and networking opportunities',
-    icon: <Coffee size={20} />,
-    type: 'break',
-    duration: '30 min'
-  },
-  { 
-    time: '17:00 – 17:15', 
     title: 'Appreciation Gifts & Closing', 
     description: 'Thank you messages and event wrap-up',
     icon: <Gift size={20} />,
     type: 'closing',
     duration: '15 min'
+  },
+    { 
+    time: '17:00 – 17:30', 
+    title: 'Coffee Break & Networking', 
+    description: 'Refreshments and networking opportunities',
+    icon: <Coffee size={20} />,
+    type: 'break',
+    duration: '30 min'
   }
 ]
 

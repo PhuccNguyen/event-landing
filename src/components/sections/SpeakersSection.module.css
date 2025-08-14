@@ -101,7 +101,7 @@
   position: relative;
 }
 
-/* ===== SMALLER SPEAKER IMAGE ===== */
+/* ===== TALLER PORTRAIT SPEAKER IMAGE ===== */
 .speakerImageContainer {
   position: relative;
   flex-shrink: 0;
@@ -109,11 +109,12 @@
 
 .speakerImageWrapper {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 85px;
+  height: 125px; /* Taller than width for portrait */
   border-radius: 0.75rem;
   overflow: hidden;
   border: 2px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .speakerImage {
@@ -126,23 +127,24 @@
   transform: scale(1.05);
 }
 
-/* ===== COMPACT STATUS BADGE ===== */
+/* ===== SMALLER STATUS BADGE ===== */
 .statusBadge {
   position: absolute;
-  top: -4px;
-  right: -4px;
+  top: -9px;
+  right: -6px;
   z-index: 2;
 }
 
 .statusBadge span {
   display: inline-block;
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.5rem;
-  font-size: 0.625rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.4rem;
+  font-size: 0.35rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  line-height: 1;
 }
 
 .statusBadge.vip span {
@@ -266,6 +268,12 @@
   border-color: #cbd5e1;
 }
 
+.toggleButton:focus {
+  outline: none;
+  ring: 2px solid #3b82f6;
+  ring-offset: 2px;
+}
+
 /* ===== COMPACT EXPANDED CONTENT ===== */
 .expandedContent {
   overflow: hidden;
@@ -282,6 +290,10 @@
   background: #f8fafc;
   border-radius: 0.5rem;
   border-left: 3px solid #3b82f6;
+}
+
+.infoBlock:last-child {
+  margin-bottom: 0;
 }
 
 .blockTitle {
@@ -343,6 +355,12 @@
   transform: translateY(-1px);
 }
 
+.socialLink:focus {
+  outline: none;
+  ring: 2px solid #3b82f6;
+  ring-offset: 2px;
+}
+
 /* ===== COMPACT CTA SECTION ===== */
 .ctaSection {
   margin-top: 2rem;
@@ -391,6 +409,12 @@
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
+.ctaButton:focus {
+  outline: none;
+  ring: 2px solid #3b82f6;
+  ring-offset: 2px;
+}
+
 /* ===== TABLET STYLES (640px+) ===== */
 @media (min-width: 640px) {
   .speakersSection {
@@ -420,8 +444,8 @@
   }
   
   .speakerImageWrapper {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 95px;
   }
   
   .speakerName {
@@ -461,8 +485,8 @@
   }
   
   .speakerImageWrapper {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 110px;
   }
   
   .speakerHeader {
@@ -487,6 +511,11 @@
   .speakersGrid {
     max-width: 1000px;
   }
+  
+  .speakerImageWrapper {
+    width: 90px;
+    height: 115px;
+  }
 }
 
 /* ===== ANIMATIONS ===== */
@@ -501,7 +530,14 @@
   }
 }
 
-
+/* ===== ACCESSIBILITY ===== */
+/* @media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+} */
 
 /* ===== HIGH CONTRAST MODE ===== */
 @media (prefers-contrast: high) {
@@ -511,5 +547,27 @@
   
   .toggleButton {
     border: 2px solid #000;
+  }
+  
+  .statusBadge span {
+    border: 1px solid #000;
+  }
+}
+
+/* ===== MOBILE TOUCH OPTIMIZATION ===== */
+@media (max-width: 640px) {
+  .toggleButton {
+    min-height: 44px; /* iOS recommended touch target */
+  }
+  
+  .socialLink {
+    min-height: 40px;
+    min-width: 40px;
+    justify-content: center;
+  }
+  
+  .ctaButton {
+    min-height: 48px;
+    padding: 0.875rem 2rem;
   }
 }

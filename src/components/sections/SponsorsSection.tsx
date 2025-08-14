@@ -33,11 +33,11 @@ const partners: Partner[] = [
   },
   {
     name: 'Collabrx',
-    logo: '/Partner/Collabrx.svg',
+    logo: '/Partner/Collabrx_logo.png',
     category: 'strategy',
     description: 'Strategic Collaboration Platform'
   },
-  
+
   // Event Partners
   {
     name: 'Coinstore',
@@ -45,6 +45,7 @@ const partners: Partner[] = [
     category: 'event',
     description: 'Global Cryptocurrency Exchange'
   },
+
   {
     name: 'Blocktians',
     logo: '/Partner/blocktians.png',
@@ -74,6 +75,12 @@ const partners: Partner[] = [
     logo: '/Partner/cointerminal.png',
     category: 'event',
     description: 'Crypto Trading & Analytics Platform'
+  },
+  {
+    name: 'Dads Network',
+    logo: '/Partner/dads_network.png',
+    category: 'event',
+    description: 'Web3 Advertising Infrastructure'
   }
 ]
 
@@ -139,9 +146,9 @@ const SponsorsSection = () => {
               >
                 {/* Category Header */}
                 <div className={styles.categoryHeader}>
-                  <div 
+                  <div
                     className={styles.categoryBadge}
-                    style={{ 
+                    style={{
                       background: categoryConfig[category].bgColor,
                       borderColor: categoryConfig[category].borderColor
                     }}
@@ -149,7 +156,7 @@ const SponsorsSection = () => {
                     {categoryConfig[category].icon}
                     <span>{categoryConfig[category].label}</span>
                   </div>
-                  <div 
+                  <div
                     className={styles.categoryLine}
                     style={{ background: categoryConfig[category].gradient }}
                   ></div>
@@ -162,8 +169,8 @@ const SponsorsSection = () => {
                       key={partner.name}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                      transition={{ 
-                        delay: categoryIndex * 0.2 + index * 0.05, 
+                      transition={{
+                        delay: categoryIndex * 0.2 + index * 0.05,
                         duration: 0.4,
                         type: "spring",
                         stiffness: 120
@@ -171,7 +178,7 @@ const SponsorsSection = () => {
                       className={styles.partnerCard}
                     >
                       {partner.website ? (
-                        <a 
+                        <a
                           href={partner.website}
                           target="_blank"
                           rel="noopener noreferrer"

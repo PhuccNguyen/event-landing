@@ -2,7 +2,6 @@ import HeroSection from '@/components/sections/HeroSection'
 import AboutSection from '@/components/sections/AboutSection'
 import SpeakersSection from '@/components/sections/SpeakersSection'
 import AgendaSection from '@/components/sections/AgendaSection'
-import StorySection from '@/components/sections/StorySection'
 import SponsorsSection from '@/components/sections/SponsorsSection'
 import VideoSection from '@/components/sections/VideoSection'
 import BecomePartSection from '@/components/sections/BecomePartSection'
@@ -17,7 +16,6 @@ export default function Home() {
       <RegistrationSection />
       <SpeakersSection />
       <AgendaSection />
-      <StorySection />
       <SponsorsSection />
       <BecomePartSection />
     </>

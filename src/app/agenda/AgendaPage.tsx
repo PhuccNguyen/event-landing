@@ -32,11 +32,11 @@ const eventsData = [
     isActive: true,
     color: '#3b82f6',
     sessions: [
-      {
+       {
         id: 'session-1',
         time: '14:00 – 14:20',
         duration: '20 min',
-        title: 'Welcome & Check-in',
+        title: 'Welcome Guest & Check-in',
         description: 'Registration, welcome reception, networking with early arrivals and event material distribution. Connect with fellow Web3 enthusiasts and prepare for an exciting day.',
         icon: <Users size={20} />,
         type: 'welcome',
@@ -77,7 +77,7 @@ const eventsData = [
         type: 'keynote',
         location: 'Main Auditorium',
         speaker: 'Lucid Hoang',
-        speakerTitle: 'Founder & CEO, Ufin Group',
+        speakerTitle: 'Founder UFIN, UFIN GROUP',
         featured: true,
         details: [
           'Strategic approaches to Web3 user acquisition and scaling',
@@ -107,24 +107,7 @@ const eventsData = [
       },
       {
         id: 'session-5',
-        time: '15:40 – 16:10',
-        duration: '30 min',
-        title: 'Coffee Break & Networking',
-        description: 'Premium refreshment break with structured networking activities, partner exhibitions, technology demonstrations, and business connection opportunities.',
-        icon: <Coffee size={20} />,
-        type: 'break',
-        location: 'Exhibition Hall & Networking Lounge',
-        details: [
-          'Premium coffee, tea, and artisan beverage service',
-          'Gourmet snacks, pastries, and healthy refreshment options',
-          'Partner company booths and technology showcases',
-          'Structured networking activities and icebreaker sessions',
-          'Business card exchange and professional connection building'
-        ]
-      },
-      {
-        id: 'session-6',
-        time: '16:10 – 16:30',
+        time: '15:40 – 16:00',
         duration: '20 min',
         title: 'Launching Ceremony',
         description: 'Exclusive launch ceremony for new Web3 initiatives, platform announcements, product reveals, and strategic partnership introductions.',
@@ -141,9 +124,9 @@ const eventsData = [
         ]
       },
       {
-        id: 'session-7',
-        time: '16:30 – 16:45',
-        duration: '15 min',
+        id: 'session-6',
+        time: '16:00 – 16:30',
+        duration: '30 min',
         title: 'MOU Signing Ceremony',
         description: 'Historic moment as strategic partnerships are formalized through memorandum of understanding signings and collaboration framework establishments.',
         icon: <Handshake size={20} />,
@@ -159,10 +142,10 @@ const eventsData = [
         ]
       },
       {
-        id: 'session-8',
-        time: '16:45 – 17:00',
-        duration: '15 min',
-        title: 'Closing & Appreciation',
+        id: 'session-7',
+        time: '16:30 – 17:00',
+        duration: '30 min',
+        title: 'Appreciation Gifts & Closing Remarks',
         description: 'Heartfelt appreciation messages, exclusive souvenir distribution, group photography, and formal conclusion of the landmark event.',
         icon: <Gift size={20} />,
         type: 'closing',
@@ -174,6 +157,23 @@ const eventsData = [
           'Group photography session with all participants',
           'Event highlights summary and key achievements',
           'Future event announcements and community follow-ups'
+        ]
+      },
+      {
+        id: 'session-8',
+        time: '17:00 – 17:30',
+        duration: '30 min',
+        title: 'Coffee Break & Networking',
+        description: 'Premium refreshment break with structured networking activities, partner exhibitions, technology demonstrations, and business connection opportunities.',
+        icon: <Coffee size={20} />,
+        type: 'break',
+        location: 'Exhibition Hall & Networking Lounge',
+        details: [
+          'Premium coffee, tea, and artisan beverage service',
+          'Gourmet snacks, pastries, and healthy refreshment options',
+          'Partner company booths and technology showcases',
+          'Structured networking activities and icebreaker sessions',
+          'Business card exchange and professional connection building'
         ]
       }
     ]
