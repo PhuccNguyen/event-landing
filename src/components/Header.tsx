@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react'
+import { X, ChevronDown, ExternalLink } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Header.module.css'
+
 
 interface DropdownItem {
   href: string
@@ -74,7 +75,7 @@ const Header = () => {
     },
     {
       href: '/sponsors',
-      label: 'Sponsors List'
+      label: 'Partner List'
     },
     {
       href: '/contact',

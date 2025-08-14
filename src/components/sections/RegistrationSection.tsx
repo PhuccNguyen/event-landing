@@ -23,7 +23,7 @@ const RegistrationSection = () => {
             Register for TingNect
           </h2>
           <p className={styles.sectionDescription}>
-            Secure your spot at the premier Web3 event in Ho Chi Minh City. 
+            Secure your spot at the premier Web3 event in Ho Chi Minh City.
             Limited seats available!
           </p>
         </motion.div>
@@ -42,7 +42,7 @@ const RegistrationSection = () => {
                 <Calendar className={styles.highlightIcon} />
                 <div>
                   <h4>August 16, 2025</h4>
-                  <p>14:00 - 17:00 + Networking Dinner</p>
+                  <p>14:00 - 17:00</p>
                 </div>
               </div>
               <div className={styles.highlightItem}>
@@ -97,14 +97,15 @@ const RegistrationSection = () => {
               <p>This event is completely free for all attendees</p>
             </div>
             <div className={styles.infoCard}>
-              <h4>Networking Dinner</h4>
-              <p>Join us for dinner and extended networking at 17:00</p>
+              <h4>Limited Seats</h4>
+              <p>Attendance is limited to registered participants only</p>
             </div>
             <div className={styles.infoCard}>
               <h4>Professional Certificates</h4>
               <p>Receive participation certificates and appreciation gifts</p>
             </div>
           </div>
+
         </motion.div>
       </div>
     </section>
