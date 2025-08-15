@@ -107,7 +107,7 @@ const HeroSection = () => {
       secondary: "141 Nguyen Hue, District 1, Ho Chi Minh City",
       accent: "Premium Location"
     },
- 
+
 
 
     {
@@ -346,31 +346,31 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-{/* Stats Section */}
-<motion.div
-  variants={fadeInUp}
-  transition={{ delay: 2.8, duration: 0.8 }}
-  className={styles.statsSection}
->
-  <div className={styles.statsGrid}>
-    {stats.map((stat, index) => (
-      <div key={index} className={styles.statItem}>
-        <motion.div
-          className={styles.statNumber}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 3 + index * 0.2, duration: 0.5 }}
-        >
-          {stat.number}
-        </motion.div>
-        <div className={styles.statLabel}>{stat.label}</div>
+          {/* Stats Section */}
+          <motion.div
+            variants={fadeInUp}
+            transition={{ delay: 2.8, duration: 0.8 }}
+            className={styles.statsSection}
+          >
+            <div className={styles.statsGrid}>
+              {stats.map((stat, index) => (
+                <div key={index} className={styles.statItem}>
+                  <motion.div
+                    className={styles.statNumber}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 3 + index * 0.2, duration: 0.5 }}
+                  >
+                    {stat.number}
+                  </motion.div>
+                  <div className={styles.statLabel}>{stat.label}</div>
 
-        {/* luôn hiển thị separator, kể cả phần tử cuối */}
-        <div className={styles.statSeparator} />
-      </div>
-    ))}
-  </div>
-</motion.div>
+                  {/* luôn hiển thị separator, kể cả phần tử cuối */}
+                  <div className={styles.statSeparator} />
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
         </motion.div>
       </div>

@@ -95,7 +95,16 @@ const eventPartners = [
     website: 'https://dadsnetwork.co',
     description: 'Web3 Advertising Infrastructure - A Web3 advertising infrastructure that empowers developers, businesses, and users to build a thriving and sustainable ecosystem with rewards pools, growth monetization, and top-tier incentives.',
     type: 'Event Partner'
+  },
+  {
+    name: 'Blockchain Jobs Opportunity (BJO Community)',
+    logo: '/Partner/bo.jpg',
+    tier: 'gold',
+    website: 'https://t.me/blockchainjob_css',
+    description: 'Blockchain Jobs Opportunity (BJO Community) is one of the largest Blockchain/Web3 recruitment communities in Vietnam, with over 21,000 members. We connect employers with top talent, providing high-quality job opportunities and helping Vietnamese professionals access global Blockchain and Web3 career prospects.',
+    type: 'Media Partner'
   }
+
 ]
 
 const sponsorshipTiers = [
@@ -194,21 +203,21 @@ const SponsorsPage = () => {
             <ArrowLeft size={18} />
             <span>Back to Home</span>
           </Link>
-          
+
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
               <Handshake size={16} />
               <span>Partners & Sponsors</span>
             </div>
-            
+
             <h1 className={styles.heroTitle}>
               Sponsors & Partners
             </h1>
-            
+
             <p className={styles.heroDescription}>
               Join leading organizations supporting TingNect and connect with Web3 industry pioneers
             </p>
-            
+
             <div className={styles.heroStats}>
               <div className={styles.statItem}>
                 <Users size={18} />
@@ -245,7 +254,7 @@ const SponsorsPage = () => {
               Strategic organizations driving Web3 innovation and enterprise adoption
             </p>
           </div>
-          
+
           <div className={styles.partnersGrid}>
             {strategyPartners.map((partner, index) => (
               <div key={index} className={`${styles.partnerCard} ${getTierClass(partner.tier)}`}>
@@ -264,12 +273,12 @@ const SponsorsPage = () => {
                     <span>{partner.type}</span>
                   </div>
                 </div>
-                
+
                 <div className={styles.partnerContent}>
                   <h3 className={styles.partnerName}>{partner.name}</h3>
                   <p className={styles.partnerDescription}>{partner.description}</p>
-                  
-                  <a 
+
+                  <a
                     href={partner.website}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -296,7 +305,7 @@ const SponsorsPage = () => {
               Leading companies and organizations supporting our Web3 community event
             </p>
           </div>
-          
+
           <div className={styles.partnersGrid}>
             {eventPartners.map((partner, index) => (
               <div key={index} className={`${styles.partnerCard} ${getTierClass(partner.tier)}`}>
@@ -315,12 +324,12 @@ const SponsorsPage = () => {
                     <span>{partner.type}</span>
                   </div>
                 </div>
-                
+
                 <div className={styles.partnerContent}>
                   <h3 className={styles.partnerName}>{partner.name}</h3>
                   <p className={styles.partnerDescription}>{partner.description}</p>
-                  
-                  <a 
+
+                  <a
                     href={partner.website}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -347,7 +356,7 @@ const SponsorsPage = () => {
               Choose the partnership level that best fits your organization
             </p>
           </div>
-          
+
           <div className={styles.tiersGrid}>
             {sponsorshipTiers.map((tier, index) => (
               <div key={index} className={`${styles.tierCard} ${styles[tier.color]}`}>
@@ -358,7 +367,7 @@ const SponsorsPage = () => {
                   <h3 className={styles.tierName}>{tier.name}</h3>
                   <p className={styles.tierPrice}>{tier.price}</p>
                 </div>
-                
+
                 <div className={styles.tierBenefits}>
                   <h4>Benefits Include:</h4>
                   <ul>
@@ -379,7 +388,7 @@ const SponsorsPage = () => {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Why Partner with TingNect?</h2>
           </div>
-          
+
           <div className={styles.reasonsGrid}>
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
@@ -388,7 +397,7 @@ const SponsorsPage = () => {
               <h3>High-Quality Audience</h3>
               <p>Connect with developers, entrepreneurs, investors, and industry leaders actively shaping the Web3 landscape in Southeast Asia.</p>
             </div>
-            
+
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
                 <Target size={28} />
@@ -396,7 +405,7 @@ const SponsorsPage = () => {
               <h3>Brand Visibility</h3>
               <p>Showcase your brand to a targeted audience through various marketing channels, event materials, and digital platforms.</p>
             </div>
-            
+
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
                 <Handshake size={28} />
@@ -404,7 +413,7 @@ const SponsorsPage = () => {
               <h3>Strategic Networking</h3>
               <p>Build valuable relationships and partnerships with key stakeholders, investors, and innovators in the blockchain ecosystem.</p>
             </div>
-            
+
             <div className={styles.reasonCard}>
               <div className={styles.reasonIcon}>
                 <Crown size={28} />

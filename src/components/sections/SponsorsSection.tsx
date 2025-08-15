@@ -81,6 +81,12 @@ const partners: Partner[] = [
     logo: '/Partner/dads_network.png',
     category: 'event',
     description: 'Web3 Advertising Infrastructure'
+  },
+  {
+    name: 'Blockchain Jobs Opportunity',
+    logo: '/Partner/bo.jpg',
+    category: 'event',
+    description: 'Blockchain & Web3 Recruitment Community'
   }
 ]
 
